@@ -1,7 +1,7 @@
 # Peter Kim Solution
 
 ### Approach Overview
-Examined the data.tsv file.  Rather than immediately working on the solution, I performed significant exploratory data analysis (EDA) on the data using Python Jupyter Notebook; allocated approximately 4-6 hours to simply understanding the data.  Analyzed 1,008 lines by reading text into a list of strings.  Created a 'notebook' folder which contains the EDA in 'explore-data-challenge.ipynb'.
+Examined the data.tsv file.  Rather than immediately working on the solution, I performed significant exploratory data analysis (EDA) on the data using Python Jupyter Notebook; allocated approximately 4-6 hours to simply understanding the data.  Analyzed 1,008 lines by reading text into a list of strings.  Created a 'notebook' folder which contains the EDA in 'explore-data-challenge.ipynb'.  Also added a .gitignore file to ignore folders .ipynb_checkpoints from Jupyter Notebook.
 
 ### Major Insight from EDA
 Out of 1,008 lines in the dataset, 995 lines have 4 tab-delimiters.  Filtering only those 995 lines, the data is easily read into a pandas dataframe using io.StringIO(), and specifying pandas 'sep' as tab-delimiter.  Once data fits into a dataframe, the remaining steps to clean-transform-export can be performed in pandas.  For example, the 'account_number' column showed some anomalies that would benefit from cleaning.  Also, some records had null values (e.g. first_name, last_name, or both) which can be filled if preferable.
