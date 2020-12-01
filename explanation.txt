@@ -1,0 +1,5 @@
+After properly configuring python’s open/file and csv modules to read the data, the most obvious issue with the data became rows that where distributed between lines.
+Some rows have spaces for certain values. It becomes hard to distinguish from actual spaces and bad data.
+The fatal flaw for my solution is that is a row that is distributed between different lines contains a space as an intended value, my solution would fail to catch such a case. My solution would automatically reset whenever it sees a new valid row, such an error would be compartmentalized and not affect the rest of that data. 
+The example data did not have such a row.
+Outside of eyeballing the output, I looked at number of values per row and the incremental integer values of the first column to validate my data.
